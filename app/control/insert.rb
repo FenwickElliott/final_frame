@@ -1,4 +1,4 @@
 if Serve.env["REQUEST_METHOD"] == "POST"
-    create_table
+    insert
     Serve.redirect("/view?" + Serve.table)
 end

@@ -23,6 +23,7 @@ def create_table
     end
     begin
         Serve.db.create_table(para["table_name"], scm)
+        Serve.set_table=(para["table_name"])
         puts 'table created'
     rescue => e
         puts e
