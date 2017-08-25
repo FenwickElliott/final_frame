@@ -1,8 +1,10 @@
 require 'erubis'
 require 'pry'
+require 'bloc_record'
 
 class Serve
     def call(env)
+        # @@tbl = env["QUERY_STRING"]
         @@repath = nil
         @@env = @env = env
         @path = @env["PATH_INFO"]
@@ -37,5 +39,13 @@ class Serve
 
     def self.env
         @@env
+    end
+
+    def self.set_table=(tbl)
+        @@tbl = tbl
+    end
+
+    def self.table
+        @@tbl
     end
 end
